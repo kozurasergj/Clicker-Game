@@ -1,0 +1,115 @@
+:root {
+  --main-color: rgb(235, 94, 0);
+  --secondary-color: rgb(82, 33, 0);
+  --bg-color: rgba(61, 36, 0, 0.9);
+  --box-shadow: 5px 5px 35px rgb(174, 70, 0);
+  --box-shadow-hover: 15px 15px 65px rgb(204, 82, 1);
+  --text-shadow: 7px 7px 8px rgb(231, 93, 0);
+}
+
+body {
+  margin: 0;
+  border: none;
+}
+
+.container {
+  height: 100vh;
+  background-image: url("images/bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.label__name,
+.label__email {
+  font-size: 2rem;
+  margin-top: 2rem;
+  text-shadow: var(--text-shadow);
+}
+
+.user__name,
+.user__email {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  color: var(--main-color);
+  opacity: 0.9;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+.user__name:hover,
+.user__email:hover {
+  box-shadow: var(--box-shadow-hover);
+  animation: shake 0.8s;
+}
+
+.start__game {
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: var(--box-shadow);
+  opacity: 0.9;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.start__game:hover {
+  position: relative;
+  background-color: var(--bg-color-hover);
+  box-shadow: 20px 20px 20px #000;
+  animation: shake 0.8s;
+  opacity: 1;
+  color: var(--text-color-hover);
+}
+
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5px, 0);
+  }
+  20% {
+    transform: translate(5px, 0);
+  }
+  30% {
+    transform: translate(-5px, 0);
+  }
+  40% {
+    transform: translate(5px, 0);
+  }
+  50% {
+    transform: translate(-5px, 0);
+  }
+  60% {
+    transform: translate(5px, 0);
+  }
+  70% {
+    transform: translate(-5px, 0);
+  }
+  80% {
+    transform: translate(5px, 0);
+  }
+  90% {
+    transform: translate(-5px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
