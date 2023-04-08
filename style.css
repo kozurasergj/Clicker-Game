@@ -5,19 +5,34 @@
   --box-shadow: 5px 5px 35px rgb(174, 70, 0);
   --box-shadow-hover: 15px 15px 65px rgb(204, 82, 1);
   --text-shadow: 7px 7px 8px rgb(231, 93, 0);
+  --bg-color2: rgb(0, 6, 7);
+  --box-shadow2: 20px 20px 20px #000;
+}
+
+* {
+  font-family: "Delicious Handrawn", cursive;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
   border: none;
+  height: 100vh;
+  background-image: url(images/bgbody.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
   height: 100vh;
-  background-image: url("images/bg.png");
+  background-image: url(images/bg.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in-out;
 }
+
 
 .registration-form {
   display: flex;
@@ -69,14 +84,12 @@ body {
 }
 
 .start__game:hover {
-  position: relative;
   background-color: var(--bg-color-hover);
-  box-shadow: 20px 20px 20px #000;
+  box-shadow: var(--box-shadow2);
   animation: shake 0.8s;
   opacity: 1;
   color: var(--text-color-hover);
 }
-
 
 @keyframes shake {
   0% {
@@ -111,5 +124,39 @@ body {
   }
   100% {
     transform: translate(0, 0);
+  }
+}
+
+/* scoreboard */
+
+.container__scoreboard {
+  display: none;
+  justify-content: space-between;
+  color: var(--main-color);
+}
+
+.container__bonus,
+.container__total {
+  font-size: 40px;
+  padding: 3rem;
+  box-shadow: var(--box-shadow);
+  user-select: none;
+  text-transform: uppercase;
+  opacity: 0.8;
+  background-color: var(--bg-color2);
+}
+
+.container__bonus:hover {
+  cursor: pointer;
+}
+
+.container__total {
+  width: 10rem;
+}
+
+@media screen and (max-width: 600px) {
+  .container__bonus,
+  .container__total {
+    padding: 2rem;
   }
 }

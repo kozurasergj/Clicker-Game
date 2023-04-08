@@ -6,24 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clicker-Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container" data-choose=true>
+    <div class="container__scoreboard">
+      <span class="container__total">total 0</span>
+      <span class="container__bonus" data-choose=true> => Get Points <= </span>
+    </div>
+
     <form class="registration-form">
       <label for="username" class="label__name">Enter your name:</label>
-      <input type="text" class="user__name" id="username" name="username" maxlength="20" required autocomplete="off">
+      <input type="text" class="user__name" id="username" name="username" min="2" max="6" minlength="6" maxlength="16"
+        required autocomplete="off" pattern="[a-zA-Z0-9]+">
 
       <label for="useremail" class="label__email">Enter your email address:</label>
-      <input type="email" class="user__email" id="useremail" name="useremail" maxlength="40" required autocomplete="off">
+      <input type="email" class="user__email" id="useremail" name="useremail" minlength="6" maxlength="40" required
+        autocomplete="off">
 
       <button type="submit" class="start__game">PLAY</button>
     </form>
   </div>
 
-  <script src="game.js"></script>
+  <script src="js/index.js" type="module"></script>
 </body>
 
 </html>
