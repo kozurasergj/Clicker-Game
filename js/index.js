@@ -1,13 +1,13 @@
 import { form } from './form.js';
 import { levels } from './levels.js';
-import {  checkInput } from './checkInput.js';
+import { checkInput } from './checkInput.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   checkInput();
 
   const StartGameButton = document.querySelector('.start__game');
   StartGameButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Предотвращает отправку формы по умолчанию
+    event.preventDefault(); 
     if (form()) {
       levels();;
     }

@@ -6,6 +6,7 @@
   --box-shadow-hover: 15px 15px 65px rgb(204, 82, 1);
   --text-shadow: 7px 7px 8px rgb(231, 93, 0);
   --bg-color2: rgb(0, 6, 7);
+  --bg-color3: rgba(0, 0, 0, 0.5);
   --box-shadow2: 20px 20px 20px #000;
   --success: rgba(93, 168, 0, 0.7);
   --danger: rgba(255, 0, 0, 0.47);
@@ -53,6 +54,7 @@ body {
   margin-top: 2rem;
   text-shadow: var(--text-shadow);
   user-select: none;
+  cursor: url(images/fist.png), auto;
 }
 
 .user__name,
@@ -68,6 +70,7 @@ body {
   transition: all 0.5s ease-in-out;
   border: none;
   outline: none;
+  cursor: url(images/fist.png), auto;
 }
 
 /* valid */
@@ -75,17 +78,33 @@ body {
 .user__email:valid {
   background-color: var(--success);
 }
-
+/* error */
+.error {
+  margin-top: 1rem;
+  display: none;
+  padding: 10px 15px;
+  background-color: var(--main-color);
+  color: var(--bg-color3);
+  max-width: 40%;
+  font-size: 16px;
+  border-radius: 10px;
+}
 /*invalid  */
 .user__name:focus:invalid,
 .user__email:focus:invalid {
   background-color: var(--danger);
 }
 
+.user__name:focus:invalid + .error,
+.user__email:focus:invalid + .error {
+  display: block;
+}
+
 .user__name:hover,
 .user__email:hover {
   box-shadow: var(--box-shadow-hover);
   animation: shake 0.8s;
+  cursor: url(images/fist.png), auto;
 }
 
 .start__game {
@@ -101,6 +120,7 @@ body {
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   user-select: none;
+  cursor: url(images/fist.png), auto;
 }
 
 .start__game:hover {
@@ -164,10 +184,13 @@ body {
   text-transform: uppercase;
   opacity: 0.8;
   background-color: var(--bg-color2);
+  user-select: none;
+  cursor: url(images/fist.png), auto;
 }
 
 .container__bonus:hover {
-  cursor: pointer;
+  opacity: 0.6;
+  background-color: var(--bg-color);
 }
 
 .container__total {
@@ -193,7 +216,7 @@ body {
 }
 .modal {
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-color3);
   transition: all 0.5s ease-in-out;
   animation: slide-in 0.5s ease-out;
 }
@@ -226,7 +249,7 @@ body {
 .modal__result {
   z-index: 22;
   overflow: auto;
-  background-color: rgba(13, 0, 0, 0.7);
+  background-color: var(--bg-color3);
 }
 
 .modal__congratulations {
@@ -248,12 +271,19 @@ body {
   font-size: 6rem;
   text-transform: uppercase;
 }
+
 .modal__page {
   background-color: var(--main-color);
   padding: 20px;
   color: #000;
-  user-select: none;
+  cursor: url(images/fist.png), auto;
 }
+.modal__page:hover {
+  cursor: url(images/fist.png), auto;
+  user-select: none;
+  opacity: 0.6;
+}
+
 ::placeholder {
   user-select: none;
 }

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clicker-Game</title>
+  <link rel="shortcut icon" href="https://img.icons8.com/color/48/null/jack-o-lantern--v1.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
@@ -16,37 +17,46 @@
 <body>
 
   <div class="container" data-choose=true>
-    <!--  -->
+    <!--modal  -->
     <div class="container__scoreboard">
       <span class="container__total">total 0</span>
-      <span class="container__bonus" data-choose=true> => Get Points <= </span>
+      <span class="container__bonus" data-choose=true> Get Points </span>
     </div>
-    <!--  -->
+    <!-- modal -->
     <div class="modal">
       <div class="modal__content">
         <p class="modal__levels">Level 1</p>
       </div>
     </div>
-    <!--  -->
+    <!--modal  -->
     <div class="modal__result">
       <div class="modal__congratulations">Congratulations, <span class="modal__username"> Serhii</span>
         , on your win! You rock!</div>
       <div><a href="/" class="modal__page">Home page</a></div>
     </div>
-    <!--  -->
+    <!--modal  -->
     <div class="modal__blood">
     </div>
-    <!--  -->
+    <!-- form -->
     <form action="#" class="registration-form">
       <label for="username" class="label__name">Enter your name:</label>
       <input type="text" class="user__name" id="username" name="username" minlength="6" maxlength="16" required
-        autocomplete="off" pattern="[a-zA-Z0-9]+" placeholder=" => Hi! I am Sergey <=">
+        autocomplete="off" pattern="[a-zA-Z0-9]+" placeholder="SergeyKozyura"
+        title="Пожалуйста, введите корректное имя">
+      <span class="error">Please fill in the input field!</span>
 
       <label for="useremail" class="label__email">Enter your email address:</label>
       <input type="email" class="user__email" id="useremail" name="useremail" minlength="6" maxlength="40" required
-        autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="kozura.sergj33@gmail.com">
+        autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="kozura.sergj33@gmail.com"
+        title="Пожалуйста, введите корректный email-адрес">
+      <span class="error">Please make sure to enter a valid email address in the input field. The email address should
+        include the "@" symbol and
+        a domain name (example@domain.com). Additionally, please ensure that there are no typos or errors in the
+        email
+        address you enter.</span>
 
-      <button type="submit" class="start__game">PLAY</button>
+      <button type="button" class="start__game">PLAY</button>
+
     </form>
   </div>
 
