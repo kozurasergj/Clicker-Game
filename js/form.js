@@ -1,7 +1,5 @@
 export const form = () => {
   let startGame = false;
-
-
   // Функция для проверки правильности email
   const isValidEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -22,10 +20,8 @@ export const form = () => {
     const emailUserInput = document.querySelector('.user__email').value;
     // Проверка на пустые поля и правильность email
     if (!validateName(nameUserInput) || !isValidEmail(emailUserInput)) {
-      alert('ERROR')
       startGame = false;
     } else {
-      alert('OK')
       startGame = true;
       localStorage.setItem("name", nameUserInput);
       localStorage.setItem("email", emailUserInput);
@@ -34,4 +30,3 @@ export const form = () => {
   checkForm();
   return startGame;
 }
-

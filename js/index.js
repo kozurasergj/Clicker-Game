@@ -1,16 +1,21 @@
 import { form } from './form.js';
 import { levels } from './levels.js';
-import { cleaning } from './checkInput.js';
+import {  checkInput } from './checkInput.js';
 
 window.addEventListener('DOMContentLoaded', () => {
-  cleaning();
-  
+  checkInput();
+
   const StartGameButton = document.querySelector('.start__game');
   StartGameButton.addEventListener('click', (event) => {
     event.preventDefault(); // Предотвращает отправку формы по умолчанию
     if (form()) {
-      levels();
+      levels();;
     }
+  });
+
+  const returnHome = document.querySelector('.modal__page');
+  returnHome.addEventListener('click', () => {
+    location.reload();
   });
 
 });

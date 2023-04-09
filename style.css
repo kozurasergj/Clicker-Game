@@ -7,6 +7,8 @@
   --text-shadow: 7px 7px 8px rgb(231, 93, 0);
   --bg-color2: rgb(0, 6, 7);
   --box-shadow2: 20px 20px 20px #000;
+  --success: rgba(93, 168, 0, 0.7);
+  --danger: rgba(255, 0, 0, 0.47);
 }
 
 * {
@@ -22,6 +24,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .container {
@@ -31,8 +34,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 0.5s ease-in-out;
+  cursor: url(images/fist.png), auto;
 }
-
+.container.animated {
+  animation: shake 0.8s;
+}
 
 .registration-form {
   display: flex;
@@ -46,6 +52,7 @@ body {
   font-size: 2rem;
   margin-top: 2rem;
   text-shadow: var(--text-shadow);
+  user-select: none;
 }
 
 .user__name,
@@ -61,6 +68,18 @@ body {
   transition: all 0.5s ease-in-out;
   border: none;
   outline: none;
+}
+
+/* valid */
+.user__name:valid,
+.user__email:valid {
+  background-color: var(--success);
+}
+
+/*invalid  */
+.user__name:focus:invalid,
+.user__email:focus:invalid {
+  background-color: var(--danger);
 }
 
 .user__name:hover,
@@ -81,6 +100,7 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  user-select: none;
 }
 
 .start__game:hover {
@@ -128,11 +148,11 @@ body {
 }
 
 /* scoreboard */
-
 .container__scoreboard {
   display: none;
   justify-content: space-between;
   color: var(--main-color);
+  user-select: none;
 }
 
 .container__bonus,
@@ -159,4 +179,93 @@ body {
   .container__total {
     padding: 2rem;
   }
+}
+/* modal */
+.modal,
+.modal__result {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+  animation: slide-in 0.5s ease-out;
+}
+
+.modal__content {
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  height: 50%;
+  max-width: 600px;
+}
+
+.modal__levels {
+  font-size: 7rem;
+  text-align: center;
+  color: #ff0000;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+@keyframes animation-opacity {
+  0% {
+    transform: opacity(0);
+  }
+  100% {
+    transform: opacity(1);
+  }
+}
+
+.modal__result {
+  z-index: 22;
+  overflow: auto;
+  background-color: rgba(13, 0, 0, 0.7);
+}
+
+.modal__congratulations {
+  margin: 10% auto;
+  padding: 20px;
+  width: 70%;
+  height: 50%;
+  max-width: 600px;
+  font-size: 4rem;
+  text-align: center;
+  color: #ff0000;
+  user-select: none;
+  text-transform: uppercase;
+  border-radius: 10%;
+}
+
+.modal__username {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+.modal__page {
+  background-color: var(--main-color);
+  padding: 20px;
+  color: #000;
+  user-select: none;
+}
+::placeholder {
+  user-select: none;
+}
+
+.container.modal__blood {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 0, 0, 0.511);
 }

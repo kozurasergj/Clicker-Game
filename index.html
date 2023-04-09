@@ -16,19 +16,35 @@
 <body>
 
   <div class="container" data-choose=true>
+    <!--  -->
     <div class="container__scoreboard">
       <span class="container__total">total 0</span>
       <span class="container__bonus" data-choose=true> => Get Points <= </span>
     </div>
-
-    <form class="registration-form">
+    <!--  -->
+    <div class="modal">
+      <div class="modal__content">
+        <p class="modal__levels">Level 1</p>
+      </div>
+    </div>
+    <!--  -->
+    <div class="modal__result">
+      <div class="modal__congratulations">Congratulations, <span class="modal__username"> Serhii</span>
+        , on your win! You rock!</div>
+      <div><a href="/" class="modal__page">Home page</a></div>
+    </div>
+    <!--  -->
+    <div class="modal__blood">
+    </div>
+    <!--  -->
+    <form action="#" class="registration-form">
       <label for="username" class="label__name">Enter your name:</label>
-      <input type="text" class="user__name" id="username" name="username" min="2" max="6" minlength="6" maxlength="16"
-        required autocomplete="off" pattern="[a-zA-Z0-9]+">
+      <input type="text" class="user__name" id="username" name="username" minlength="6" maxlength="16" required
+        autocomplete="off" pattern="[a-zA-Z0-9]+" placeholder=" => Hi! I am Sergey <=">
 
       <label for="useremail" class="label__email">Enter your email address:</label>
       <input type="email" class="user__email" id="useremail" name="useremail" minlength="6" maxlength="40" required
-        autocomplete="off">
+        autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="kozura.sergj33@gmail.com">
 
       <button type="submit" class="start__game">PLAY</button>
     </form>
