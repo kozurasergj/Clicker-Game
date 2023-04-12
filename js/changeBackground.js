@@ -17,11 +17,20 @@ export const changeBackground = (level) => {
   scaryAudio.loop = true;
   const winAudio = new Audio('../music/win.mp3');
 
-  let path = '';
+  const changeDisplaySvg = (number = 0) => {
+    const allHtmlSvg = document.querySelectorAll('svg');
+    allHtmlSvg.forEach((svg) => {
+      svg.style.display = 'none';
+    });
+    allHtmlSvg[number].style.display = 'block';
+  };
+
+
+  // let path = '';
   switch (level) {
     case 1:
-      // htmlContainer.style.backgroundImage = '../images/bgbody.jpg';
-      path = '../images/1.svg';
+      changeDisplaySvg(0);
+
       displayModal('block', 1);
       timer();
       startTime = Date.now();
@@ -29,27 +38,27 @@ export const changeBackground = (level) => {
       nextAudio.play();
       break;
     case 2:
-      path = '../images/2.svg';
+      changeDisplaySvg(1);
       displayModal('block', 2);
       nextAudio.play();
       break;
     case 3:
-      path = '../images/3.svg';
+      changeDisplaySvg(2);
       displayModal('block', 3);
       nextAudio.play();
       break;
     case 4:
-      path = '../images/4.svg';
+      changeDisplaySvg(3);
       displayModal('block', 4);
       nextAudio.play();
       break;
     case 5:
-      path = '../images/5.svg';
+      changeDisplaySvg(4);
       displayModal('block', 5);
       nextAudio.play();
       break;
     case 6:
-      path = '../images/5.svg';
+      changeDisplaySvg(4);
       // scaryAudio.pause();
       nextAudio.play();
       winAudio.play();
@@ -57,8 +66,7 @@ export const changeBackground = (level) => {
       showInfo('none', '.container__scoreboard');
       break;
   }
-  htmlBlockCharacter.src = path;
-  
+
   setTimeout(() => {
     displayModal('none', '.container__scoreboard');
   }, 3000);

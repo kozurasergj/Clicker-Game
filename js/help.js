@@ -1,4 +1,8 @@
-export const help = () => {
+export const help = (block = '.modal__spendtime', time = '.00') => {
+
+  const modalElem = document.querySelector(block);
+  modalElem.textContent = `Time: ${time}`;
+
 
   const cleaningNameInput = document.querySelector('.user__name');  // Очистка инпута
   cleaningNameInput.addEventListener('input', () => {

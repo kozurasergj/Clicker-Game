@@ -3,6 +3,9 @@ import { showInfo } from './showInfo.js';
 export const timer = () => {
   const timeHtmlBlock = document.querySelector('.container__time');
 
+  const startTime = new Date();
+  let result = 0;
+
 
   const endTime = new Date();
   endTime.setMinutes(endTime.getMinutes() + 1); // например, игра длится 1 минут
@@ -12,6 +15,7 @@ export const timer = () => {
     const timeDiff = endTime - currentTime;
     let seconds = Math.floor(timeDiff / 1000);
     seconds = seconds % 60;
+    result = seconds;
     timeHtmlBlock.textContent = (`seconds:${seconds}`);
     if (seconds < 1) {
       clearInterval(timerInterval); // остановить интервал, чтобы перестать обновлять таймер
@@ -19,20 +23,16 @@ export const timer = () => {
     }
   }
 
+  // timeSpent = (new Date() - startTime) / 1000;
+
   const timerInterval = setInterval(updateTimer, 1000);
 
   const endGame = () => {
     showInfo('none', '.container__scoreboard');
     showInfo('block', '.modal__loss', true);
   }
+
+  return result;
 };
 
-// ! добавить сколько клтков сделал пользовател  в конце
-//! 1 сколько потраченно таймер
-//! 2 аргуметы в function
-//! 3 git hub
-//! 4 нейминг перемених
 
-// const betweenTime = (finish - start) / 1000;
-  // const minutes = Math.floor(betweenTime / 60);
-  // const seconds = Math.floor(betweenTime % 60);
