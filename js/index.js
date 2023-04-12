@@ -1,20 +1,13 @@
 import { form } from './form.js';
 import { levels } from './levels.js';
-import { checkInput } from './checkInput.js';
+import { help } from './help.js';
 
 window.addEventListener('DOMContentLoaded', () => {
-  checkInput();
-
-
+  help();
 
   const StartGameButton = document.querySelector('.start__game');
-  StartGameButton.addEventListener('click', (event) => {
+  StartGameButton.addEventListener('click', () => {
     form() && levels();
-  });
-
-  const returnHome = document.querySelector('.modal__page');
-  returnHome.addEventListener('click', () => {
-    location.reload();
   });
 
 });

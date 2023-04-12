@@ -6,21 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clicker-Game</title>
+  <!-- icon -->
   <link rel="shortcut icon" href="https://img.icons8.com/color/48/null/jack-o-lantern--v1.png" type="image/x-icon">
+  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <!-- css -->
+  <link rel="stylesheet" href="css/null.css">
+  <link rel="stylesheet" href="css/var.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <div class="container" data-choose=true>
+  <!--container  -->
+  <div class="container">
+
     <!--modal  -->
     <div class="container__scoreboard">
-      <span class="container__total">total 0</span>
-      <span class="container__bonus" data-choose=true> Get Points </span>
+      <div class="container__menu">
+        <span class="container__total">total 0</span>
+        <span class="container__level">Level: 1</span>
+        <span class="container__time"> Time </span>
+      </div>
+      <div class="container__character">
+        <img class="container__images" src="images/1.svg" alt="photo">
+      </div>
     </div>
     <!-- modal -->
     <div class="modal">
@@ -28,23 +40,31 @@
         <p class="modal__levels">Level 1</p>
       </div>
     </div>
-    <!--modal  -->
+    <!-- modal loss -->
+  <div class="modal__loss">
+    <div class="modal__info">Sorry, <span class="modal__username">Serhii</span>, you lost! Better luck next time.</div>
+    <button class="modal__page ">Home</button>
+  </div>
+    <!--modal win-->
     <div class="modal__result">
       <div class="modal__congratulations">Congratulations, <span class="modal__username"> Serhii</span>
-        , on your win! You rock!</div>
-      <div><a href="/" class="modal__page">Home page</a></div>
+        , on your win! You rock!
+        <span class="modal__timer">Time: 22.0002</span>
+      </div>
+      <button class="modal__page ">Home</button>
     </div>
     <!--modal  -->
     <div class="modal__blood">
     </div>
     <!-- form -->
     <form action="#" class="registration-form">
+      <!-- username -->
       <label for="username" class="label__name">Enter your name:</label>
-      <input type="text" class="user__name" id="username" name="username" minlength="6" maxlength="16" required
-        autocomplete="off" pattern="[a-zA-Z0-9]+" placeholder="SergeyKozyura"
+      <input type="text" class="user__name" id="username" name="username" minlength="6" maxlength="10" required
+        autocomplete="off" pattern="[a-zA-Z0-9]{5,}" placeholder="SergeyKozyura"
         title="Пожалуйста, введите корректное имя">
       <span class="error">Please fill in the input field!</span>
-
+      <!-- useremail -->
       <label for="useremail" class="label__email">Enter your email address:</label>
       <input type="email" class="user__email" id="useremail" name="useremail" minlength="6" maxlength="40" required
         autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="kozura.sergj33@gmail.com"
@@ -54,7 +74,13 @@
         a domain name (example@domain.com). Additionally, please ensure that there are no typos or errors in the
         email
         address you enter.</span>
-
+      <!-- Nickname -->
+      <label for="usernickname" class="label__nickname">Nickname:</label>
+      <input type="text" class="user__nickname" id="usernickname" name="usernickname" minlength="6" maxlength="10"
+        required autocomplete="off" pattern="[a-zA-Z0-9]{5,10}" placeholder="Sergey33"
+        title="Пожалуйста, введите корректное имя">
+      <span class="error">Please fill in the input field!</span>
+      <!-- button -->
       <button type="submit" class="start__game">PLAY</button>
 
     </form>

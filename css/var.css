@@ -1,0 +1,13 @@
+:root {
+  --main-color: rgb(235, 94, 0);
+  --secondary-color: rgb(82, 33, 0);
+  --bg-color: rgba(61, 36, 0, 0.9);
+  --box-shadow: 5px 5px 35px rgb(174, 70, 0);
+  --box-shadow-hover: 15px 15px 65px rgb(204, 82, 1);
+  --text-shadow: 7px 7px 8px rgb(231, 93, 0);
+  --bg-color2: rgb(0, 6, 7);
+  --bg-color3: rgba(0, 0, 0, 0.8);
+  --box-shadow2: 20px 20px 20px #000;
+  --success: rgba(93, 168, 0, 0.7);
+  --danger: rgba(255, 0, 0, 0.47);
+}
