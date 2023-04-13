@@ -3,12 +3,15 @@ export const form = () => {
   // Функция для проверки правильности email
   const isValidEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+    if (regex.test(email) && email.length > 5 && email.length < 64) {
+      return true;
+    }
+    return false;
   }
   // Функция для проверки правильности name
   const validateName = (name) => {
     const regex = /^[a-zA-Z0-9]+$/;
-    if (name.trim() !== '' && regex.test(name) && name.length > 4 ) {
+    if (name.trim() !== '' && regex.test(name) && name.length > 4 && name.length < 30) {
       return true;
     }
     return false;

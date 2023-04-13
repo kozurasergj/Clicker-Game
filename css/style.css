@@ -1,10 +1,7 @@
-* {
+body {
   font-family: "Delicious Handrawn", cursive;
   font-size: 16px;
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
   border: none;
   height: 100vh;
@@ -25,6 +22,7 @@ body {
   cursor: url(../images/fist.png), auto;
   overflow: hidden;
 }
+
 .container.animated {
   animation: shake 0.8s;
 }
@@ -41,9 +39,11 @@ body {
 .label__nickname {
   font-size: 20px;
   margin-top: 1rem;
-  text-shadow: var(--text-shadow);
-  user-select: none;
   cursor: url(../images/fist.png), auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .user__name,
@@ -61,6 +61,10 @@ body {
   border: none;
   outline: none;
   cursor: url(../images/fist.png), auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* valid */
@@ -69,6 +73,7 @@ body {
 .user__nickname:valid {
   background-color: var(--success);
 }
+
 /* error */
 .error {
   margin-top: 1rem;
@@ -79,6 +84,10 @@ body {
   max-width: 40%;
   font-size: 16px;
   border-radius: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 /*invalid  */
 .user__name:focus:invalid,
@@ -161,6 +170,10 @@ body {
 .svg {
   user-select: none;
   height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container__time,
@@ -169,12 +182,14 @@ body {
   font-size: 30px;
   padding: 2rem;
   box-shadow: var(--box-shadow);
-  user-select: none;
   text-transform: uppercase;
   opacity: 0.8;
   background-color: var(--bg-color2);
-  user-select: none;
   cursor: url(../images/fist.png), auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container__time {
@@ -192,6 +207,7 @@ body {
     padding: 2rem;
   }
 }
+
 /* modal */
 .modal,
 .modal__loss,
@@ -232,7 +248,12 @@ body {
   background-color: var(--danger);
   z-index: 22;
   overflow: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
 .modal__info,
 .modal__congratulations {
   margin: 1rem auto;
@@ -256,13 +277,6 @@ body {
   text-transform: uppercase;
 }
 
-.modal__spendtime {
-  margin-top: 2rem;
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-}
-
 .modal__page {
   display: block;
   margin: 0 auto;
@@ -273,6 +287,7 @@ body {
   cursor: url(../images/fist.png), auto;
   user-select: none;
   transition: all 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 .modal__page:hover {
@@ -282,8 +297,8 @@ body {
   user-select: none;
 }
 
-.container.modal__blood {
-  display: block;
+.modal__blood {
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -292,6 +307,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: var(--danger);
+  opacity: 0.6;
 }
 
 /* animation */

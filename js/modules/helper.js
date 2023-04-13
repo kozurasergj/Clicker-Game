@@ -1,8 +1,4 @@
-export const help = (block = '.modal__spendtime', time = '.00') => {
-
-  const modalElem = document.querySelector(block);
-  modalElem.textContent = `Time: ${time}`;
-
+export const helper = () => {
 
   const cleaningNameInput = document.querySelector('.user__name');  // Очистка инпута
   cleaningNameInput.addEventListener('input', () => {
@@ -14,7 +10,8 @@ export const help = (block = '.modal__spendtime', time = '.00') => {
     cleaningNicknameInput.value = cleaningNicknameInput.value.replace(/[а-яА-ЯіІїЇєЄ]/g, '').trim();
   });
 
-  document.querySelector('.registration-form').addEventListener('submit', (event) => {
+  const form = document.querySelector('.registration-form');
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
   });
 
@@ -24,5 +21,4 @@ export const help = (block = '.modal__spendtime', time = '.00') => {
       location.reload();
     });
   });
-
 }
