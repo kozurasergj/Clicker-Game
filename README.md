@@ -8,8 +8,7 @@ Welcome to Monster Battles, a simple but engaging game where you fight monsters 
 To attack a monster, click on it. Each monster has a health bar, and when its health reaches zero, it is defeated. Once all monsters on a level are defeated, you will progress to the next level.
 
   
-To play the game, simply follow this link:   [clicker-game]( clicker-game-with-monsters.netlify.app/)
-
+To play the game, simply follow this link:    [clicker-game](https://clicker-game-with-monsters.netlify.app/)
 
 ### Gameplay Features:
 
