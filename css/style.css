@@ -283,7 +283,6 @@ body {
 }
 
 .modal__username {
-  font-family: "Arial", "Helvetica", sans-serif;
   font-size: 3rem;
   text-transform: uppercase;
 }
@@ -291,8 +290,9 @@ body {
 .modal__page {
   display: block;
   margin: 0 auto;
+  font-size: 2rem;
   border-radius: 10px;
-  padding: 20px 30px;
+  padding: 20px 50px;
   text-align: center;
   color: var(--danger);
   background-color: var(--bg-color2);
